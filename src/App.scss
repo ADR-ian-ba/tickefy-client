@@ -1,0 +1,976 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;1,400;1,900&display=swap');
+
+:root{
+  --10-- : #5c00ff;
+  --30-- : #aa90ff;
+  --60--: #171717;
+  --white--: #fbfbfb;
+  --gray--: #555;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  background-color: var(--60--);
+  color: var(--white--);
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  
+}
+section{
+  padding: 1rem 6rem 1rem 6rem;
+  user-select: none;
+
+}
+
+@media only screen and (max-width: 1280px) {
+  section{
+    padding: 1rem 4rem 1rem 4rem;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  section{
+    padding: 1rem 2rem 1rem 2rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  section{
+    padding: .5rem 1rem 1rem .5rem;
+  }
+}
+
+
+nav{
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+
+  svg{
+    display: none;
+    height: 2.5rem;
+    width: 2.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: .5rem;
+    margin: .5rem;
+  }
+
+  .logo{
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .active-style{
+    border-bottom: solid 2px var(--10--);
+  }
+
+  ul{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    align-items: center;
+
+    li{
+      cursor: pointer;
+      text-decoration: none;
+ 
+      a{
+        color: var(--white--);
+        text-decoration: none;
+      }
+    }
+  }
+
+}
+
+.menu{
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 11;
+  padding: 1rem;
+  margin: .5rem;
+  cursor: pointer;
+  display: none;
+}
+
+.exit{
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 11;
+  padding: 1rem;
+  margin: .5rem;
+  cursor: pointer;
+  display: none;
+}
+
+.logo-mobile{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 11;
+  padding: 1rem;
+  margin: .5rem;
+  cursor: pointer;
+  display: none;
+}
+@media (max-width: 600px) {
+  .menu{
+    display: block;
+  }
+  
+  .exit{
+    display: block;
+  }
+  
+  .logo-mobile{
+    display: block;
+  }
+
+    .filler{
+      height: 5rem;
+    }
+
+  nav{
+    position: fixed;
+    top: 0;
+    right: 0;
+    flex-direction: column;
+    background-color: rgb(59, 59, 59);
+    height: 100%;
+    width: 40%;
+    justify-content: flex-start;
+    z-index: 10;
+    gap: 2rem;
+    transition: all .5s ease;
+    transform: translate(100%);
+
+
+    ul{
+      flex-direction: column;
+      width: 100%;
+      margin-top: 5rem;
+      align-items: center;
+
+      a{
+        width: 100%;
+        height: 2rem;
+        padding: 1rem 0;
+        text-align: center;
+        transition: all .1s ease;
+        color: var(--white--);
+        text-decoration: none;
+
+        &:hover{
+          background-color: var(--30--);
+        }
+
+        li{
+          padding-top: .4rem;
+        }
+
+      }
+
+
+
+      .logo-li{
+        display: none;
+      }
+    }
+    svg{
+      display: block;
+    }
+
+    .logo{
+      display: none;
+    }
+  }
+}
+
+.display-none{
+  display: none;
+}
+
+.open-nav{
+  transform: translate(0);
+}
+
+footer{
+  padding: 2.5rem 0;
+  p{
+    text-align: center;
+  }
+}
+
+.home{
+
+  .video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 80vh;
+    width: 100vw;
+    z-index: 2;
+
+    video{
+      width: 100%;  
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+
+      p{
+        position: absolute;
+        z-index: 2;
+      }
+    }
+
+    &::before{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      content: "";
+      width: 100%;
+      height: 5rem;
+      background:linear-gradient(to top, var(--60--), transparent) ;
+      z-index: 3;
+    }
+  }
+
+  .spacer-vid{
+    height: 80vh;
+  }
+
+  .hero-title{
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    z-index: 3;
+
+    h1{
+      font-size: 2rem;
+      margin: 0;
+    }
+
+    span{
+      color: var(--30--);
+    }
+
+    button{
+      width: 15rem;
+      height: 3rem;
+      margin-bottom: 10px;
+      margin-top: 10px;
+      font-size: 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .login-button{
+      background-color: transparent;
+      border: solid 2px var(--30--);
+      color: var(--30--);
+      transition: all 0.5s ease;
+
+      &:hover{
+        background-color: var(--10--);
+        color: var(--white--);
+        border: none;
+        transition: all 0.5s ease;
+      }
+    }
+
+    .register-button{
+      background-color: var(--30--);
+      color: var(--white--);
+      transition: all 0.5s ease;
+
+      &:hover{
+        background-color: var(--10--);
+      }
+    }
+  }
+
+  .render-poster{
+
+    .slider-wrapper{
+        display: flex;
+        align-items: center;
+        gap: 25px;
+
+        svg{
+          width: 2rem;
+          height: 2rem;
+          cursor: pointer;
+          padding: .3rem;
+        }
+      .poster-div::-webkit-scrollbar {
+        display: none; /* Hide scrollbar for Webkit browsers */
+      }
+
+      .poster-div{
+        display:flex ;
+        align-items: center;
+        gap: 25px;
+        width: 100%;
+        overflow-x: auto;
+        margin: 0 auto;
+        scroll-behavior: smooth;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;
+  
+  
+        .poster-holder{
+          flex-shrink: 0;
+          width: 200px;
+          height: 300px;
+          overflow: hidden;
+          border-radius: 3px;
+          transition: all .5s ease;
+          cursor: pointer;
+    
+          img{
+            width: 100%; 
+            height: 100%;
+            object-fit: cover;
+          }
+
+          &:hover{
+            transform: scale(1.05);
+          }
+        }
+      }
+
+      .dialog{
+        width: 80vw;
+        height: 95vh;
+        bottom: -10px;
+        left: 50%;
+        position: fixed;
+        border-radius: 10px;
+        overflow: hidden;
+        border: 5px solid var(--30--);
+        border-bottom: none;
+        transform: translateX(-50%);
+        z-index: 10;
+
+        .dialog-inner{
+          width: inherit;
+          height: inherit;
+          background-color: var(--60--);
+          position: relative;
+
+          svg{
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 3;
+            height: 35px;
+            width: 35px;
+            padding: .5rem;
+            margin: .5rem;
+            cursor: pointer;
+            z-index: 5;
+
+            path{
+              color: var(--white--);
+            }
+          }
+
+          .black-filter{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 30vh;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+
+            &::before{
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              content: "";
+              width: 100%;
+              height: 5rem;
+              background:linear-gradient(to top, var(--60--), transparent) ;
+              z-index: 3;
+            }
+          }
+
+          .image-div{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 30vh;
+            width: 100%;
+            z-index: 0;
+
+            img{
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+
+          .concert-bundle{
+            width: 100%;
+            height: fit-content;
+            z-index: 2;
+            position: relative;
+            padding-top: 2rem;
+            margin-bottom: 1rem;
+
+            .concert-name{
+              margin: 0;
+              padding: 0;
+              line-height: 90%;
+              max-width: 90%;
+              font-size: 3rem;
+              padding: 1rem;
+            }
+
+            .concert-artist{
+              margin: 0;
+              padding: 0;
+              max-width: 30%;
+              font-size: 1rem;
+              padding: 1rem;
+            }
+
+            .concert-description{
+              margin: 0;
+              padding: 0;
+              max-width: 50%;
+              font-size: .8rem;
+              padding: 1rem;
+            }
+          }
+
+          .show-div::-webkit-scrollbar {
+            width: 7px;
+        }
+        
+        .show-div::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        .show-div::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px; 
+        }
+        
+        .show-div::-webkit-scrollbar-thumb:hover {
+            background: #555; 
+        }
+
+          
+
+          .show-div{
+            padding: 0 10%;
+            height: 60%;
+            overflow-x: auto;
+            position: relative;
+            z-index: 5;
+
+            .show-information{
+              border-top: 2px solid var(--30--);
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              align-items: center;
+              margin-bottom: 1rem;
+              gap: 10px;
+
+              .div-2{
+                text-align: right;
+
+                p{
+                  margin: 0;
+                  span{
+                    font-weight: bolder;
+                  }
+                }
+              }
+
+              .div-1{
+                button{
+                  width: 100%;
+                  height: 2.5rem;
+                  font-size: 1.2rem;
+                  border: none;
+                  background-color: var(--30--);
+                  color: var(--white--);
+                  border-radius: 4px;
+                  cursor: pointer;
+                  transition: all .1s ease;
+
+                  &:hover{
+                    background-color: var(--10--);
+                  }
+
+                  &:active{
+                    background-color: var(--30--);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+    }
+
+    
+  }
+}
+
+.login-register-body{
+  margin-top: 5rem;
+  height: 65vh;
+
+  svg{
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+  }
+
+  h1{
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    span{
+      color: var(--30--);
+    }
+  }
+
+  .login-register-box{
+    max-width: 25rem;
+    min-width: 15rem ;
+    border: 2px solid var(--30--);
+    margin: 0 auto;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-top: 1rem;
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');
+
+    input{
+      box-sizing: border-box;
+      margin-bottom: 2rem;
+      height: 2rem;
+      width: 100%;
+      padding: 1rem;
+      border-radius: 3px;
+      border: 2px solid var(--30--);
+      font-size: 1.2rem;
+
+
+      :focus{
+        border: 2px solid var(--30--);
+      }
+    }
+
+    button{
+      display: block;
+      width: 100%;
+      height: 3rem;
+      font-size: 1.5rem;
+      border: none;
+      border-radius: 3px;
+      background-color: var(--30--);
+      color: var(--white--);
+      cursor: pointer;
+      transition: all .1s ease;
+
+      &:hover{
+        background-color: var(--10--);
+      }
+
+      &:active{
+        background-color: var(--30--);
+      }
+    }
+  }
+
+  
+}
+
+.cat-page{
+
+  .show-title{
+    width: 200px;
+    font-size:3rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .wrapper{
+    width: 250px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--30--);
+  }
+  .image-cat{
+    max-width:50rem;
+    height: 50%;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-bottom: 5rem;
+
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .each-cat{
+    max-width:50rem;
+    height: 9rem;
+    background-color: var(--30--);
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    border-radius: 3px;
+    transition: all .2s ease;
+    cursor: pointer;
+    padding: 1rem;
+
+    &:hover{
+      background-color: var(--10--);
+    }
+
+    h1,p,h3{
+      margin: 0;
+    }
+
+  }
+
+}
+
+.cat-buy{
+
+  h1{
+    width: 100px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
+
+  .image-wrapper{
+    max-width: 40rem;
+    height: 20rem;
+    margin: 2rem auto;
+    overflow: hidden;
+    border-radius: 5px;
+
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .info-wrapper{
+    max-width: 60rem;
+    margin: 0 auto;
+    margin-top: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--30--);
+
+    button{
+      width: 100%;
+      height: 2.5rem;
+      border: none;
+      border-radius: 4px;
+      font-size: 1.5rem;
+      background-color: var(--30--);
+      color: var(--white--);
+      transition:  all .2s ease;
+      margin-top: 2rem;
+      cursor: pointer;
+
+      &:hover{
+        background-color: var(--10--);
+      }
+    }
+
+    .official{
+      font-size: 3rem;
+    }
+
+    .price-qt-wrapper{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      > :first-child {
+        justify-self: start;
+    }
+
+    > :last-child {
+        justify-self: end;
+    }
+
+    .price{
+      font-size: 1.5rem;
+    }
+
+      .increaser{
+        text-align: center;
+        p{
+          margin: 0;
+          margin-bottom: 1rem;
+        }
+        .control{
+          justify-content: center;
+          display: flex;
+          gap: 15px;
+          text-align: center;
+
+          svg{
+            width: 35px;
+            height: 35px;
+            cursor: pointer;
+            background-color: var(--gray--);
+            border-radius: 2px;
+          }
+        }
+      }
+
+    }
+  }
+
+  .secondary-wrapper{
+    overflow-y: auto;
+    max-width: 60rem;
+    margin: 0 auto;
+
+    .official{
+      font-size: 3rem;
+    }
+
+        /* Custom scrollbar styles */
+        .table::-webkit-scrollbar {
+          width: 7px; /* Width of the scrollbar */
+        }
+      
+        .table::-webkit-scrollbar-track {
+          background: transparent /* Color of the track */
+        }
+      
+        .table::-webkit-scrollbar-thumb {
+          background: #8f8f8f; /* Color of the scrollbar thumb */
+          border-radius: 10px; /* Rounded corners on the scrollbar thumb */
+        }
+      
+        /* Handle scrollbar thumb hover */
+        .table::-webkit-scrollbar-thumb:hover {
+          background: #4d4d4d; /* Color when hovering over the scrollbar thumb */
+        }
+    
+    
+    .table{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-height: 30rem;
+      align-items: start;
+      text-align: center;
+      overflow-y: auto;
+      margin-bottom: 4rem;
+
+      
+
+      .buy{
+
+        .column{
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+
+          h5{
+            background-color: var(--30--);
+            padding: .5rem;
+          }
+
+          button{
+            height: 20px;
+            width: 30px;
+            margin: auto auto;
+            border-radius: 2px;
+            border: 2px solid #00c903;
+            background-color: #008502;
+            color: var(--white--);
+            padding: 0;
+          }
+        }
+      }
+
+      
+      .offer{
+
+        .column{
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          h5{
+            background-color: var(--30--);
+            padding: .5rem;
+          }
+          button{
+            height: 20px;
+            width: 30px;
+            margin: auto auto;
+            border-radius: 2px;
+            border: 2px solid #c90000;
+            background-color: #850101;
+            color: var(--white--);
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .market-order-wrapper{
+    position: relative;
+    max-width: 60rem;
+    margin: 0 auto;
+
+    p{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      background-color: var(--60--);
+      padding: 10px;
+    }
+
+    .line{
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: var(--30--);
+      top: 18px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+  }
+
+  .button-bundle{
+    display: flex;
+    max-width: 60rem;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    margin-top: 3rem;
+    gap: 2rem;
+    
+    button{
+      width: 100%;
+      height: 2.5rem;
+      border: none;
+      border-radius: 4px;
+      font-size: 1.5rem;
+      background-color: var(--30--);
+      color: var(--white--);
+      transition:  all .2s ease;
+      margin-top: 2rem;
+      cursor: pointer;
+
+      &:hover{
+        background-color: var(--10--);
+      }
+    }
+  }
+
+  .dialog{
+
+    background-color: var(--gray--);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem;
+    border-radius: 5px;
+    border: 2px solid var(--30--);
+    z-index: 2;
+
+    .close{
+      width: 35px;
+      height: 35px;
+      padding: .1rem;
+      margin: .8rem;
+      position: absolute;
+      border-radius: 3px;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+      transition: all .1s ease;
+
+      &:hover{
+        background-color: var(--60--);
+      }
+    }
+
+    .increaser{
+      margin-top: 2rem;
+      
+      .control{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        svg{
+          width: 35px;
+          height: 35px;
+          cursor: pointer;
+          transition: all .1s ease;
+          border-radius: 2px;
+
+          &:hover{
+            background-color: var(--60--);
+          }
+        } 
+      }
+
+
+
+    }
+
+    input{
+      margin-right: 10px;
+      height: 2rem;
+      border: 2px solid var(--30--);
+      border-radius: 3px;
+      padding: 3px;
+    }
+
+    button{
+      height: 2.5rem;
+      border: none;
+      border-radius: 3px;
+      background-color: var(--30--);
+      color: var(--white--);
+      cursor: pointer;
+    }
+  }
+}
+
+
+footer{
+  margin-top: 5rem;
+}
