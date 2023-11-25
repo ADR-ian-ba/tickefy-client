@@ -9,7 +9,7 @@ const HomePage = () => {
   const[loading, setLoading] = useState(true)
 
   useEffect(() => {
-         fetch("http://localhost:4000/data", {
+         fetch("https://tickefy-api.onrender.com/data", {
              method: "GET",
              headers: {
                  "Content-Type": "application/json"

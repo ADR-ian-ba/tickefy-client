@@ -20,7 +20,7 @@ const LoginPage = () => {
     }
 
     toast.promise(
-      fetch("http://localhost:4000/register", {
+      fetch("https://tickefy-api.onrender.com/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

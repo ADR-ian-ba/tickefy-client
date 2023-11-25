@@ -24,7 +24,7 @@ const TicketPricePage = () => {
             showId : showId,
             parentId: parentId
         }
-        fetch("http://localhost:4000/catdata",{
+        fetch("https://tickefy-api.onrender.com/catdata",{
             method: "POST",
             headers: {
                 "Content-Type":"application/json"

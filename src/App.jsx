@@ -15,7 +15,7 @@ function App() {
       token : token
     }
 
-    fetch("http://localhost:4000/validateToken", {
+    fetch("https://tickefy-api.onrender.com/validateToken", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

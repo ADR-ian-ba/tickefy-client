@@ -8,7 +8,7 @@ const TicketPage = () => {
       token : localStorage.getItem("token")
     }
 
-    fetch("http://localhost:4000/getbidoffer",{
+    fetch("https://tickefy-api.onrender.com/getbidoffer",{
       method:"POST",
       headers:{
         "Content-Type":"application/json"

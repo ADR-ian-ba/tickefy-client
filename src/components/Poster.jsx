@@ -17,7 +17,7 @@ const Poster = ({item}) => {
             data : item._id
         }
 
-        fetch("http://localhost:4000/concertdata",{
+        fetch("https://tickefy-api.onrender.com/concertdata",{
             method: "POST",
             headers: {
                 "Content-Type":"application/json"

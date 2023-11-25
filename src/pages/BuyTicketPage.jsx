@@ -36,7 +36,7 @@ const BuyTicketPage = () => {
             concertId: concertId
         };
 
-        fetch("http://localhost:4000/getcat", {
+        fetch("https://tickefy-api.onrender.com/getcat", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -115,7 +115,7 @@ const BuyTicketPage = () => {
             price: buyPrice
         }
 
-        fetch("http://localhost:4000/getbid",{
+        fetch("https://tickefy-api.onrender.com/getbid",{
             method: "POST",
             headers: {
                 "Content-Type":"application/json"
@@ -156,7 +156,7 @@ const BuyTicketPage = () => {
             price: sellPrice
         }
 
-        fetch("http://localhost:4000/getoffer",{
+        fetch("https://tickefy-api.onrender.com/getoffer",{
             method: "POST",
             headers: {
                 "Content-Type":"application/json"
@@ -194,7 +194,7 @@ const BuyTicketPage = () => {
             showId: showId,
         }
 
-        fetch("http://localhost:4000/getprice", {
+        fetch("https://tickefy-api.onrender.com/getprice", {
             method: "POST",
             headers: {
                 "Content-Type":"application/json"

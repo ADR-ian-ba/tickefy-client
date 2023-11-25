@@ -119,7 +119,7 @@ const AdminPage = () => {
         console.log(formDataObject)
 
         try{
-            fetch('http://localhost:4000/uploadconcert', {
+            fetch('https://tickefy-api.onrender.com/uploadconcert', {
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json', 
