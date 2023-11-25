@@ -38,19 +38,19 @@ const HomePage = () => {
       setVideoPlaying(false);
   };
 
-  useEffect(() => {
-    // Change body background color when the video is playing
-    if (videoPlaying) {
-        document.body.style.backgroundColor = '#121212';
-    } else {
-        document.body.style.backgroundColor = '#171717';
-    }
+//   useEffect(() => {
+//     // Change body background color when the video is playing
+//     if (videoPlaying) {
+//         document.body.style.backgroundColor = '#121212';
+//     } else {
+//         document.body.style.backgroundColor = '#171717';
+//     }
 
-    // Cleanup function to reset the background color
-    return () => {
-        document.body.style.backgroundColor = '#171717';
-    };
-}, [videoPlaying]);
+//     // Cleanup function to reset the background color
+//     return () => {
+//         document.body.style.backgroundColor = '#171717';
+//     };
+// }, [videoPlaying]);
 
     // if(loading || videoPlaying){
     // return (
