@@ -3,7 +3,7 @@ import { AdminPage, BuyTicketPage, HomePage, LoginPage, RegisterPage, TicketPage
 import './App.css'
 import { useContext, useEffect } from "react";
 import { UserContext } from "./context/UserContext";
-
+//addes comment
 function App() {
     const{setIsLogin, setUsername} = useContext(UserContext)
 
