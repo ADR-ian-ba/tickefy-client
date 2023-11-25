@@ -5,9 +5,8 @@ import { Link } from "react-router-dom"
 
 const HomePage = () => {
 
-  const {recomendation, setRecomendation, isLogin} = useContext(UserContext)
+  const {recomendation, setRecomendation, isLogin, videoPlaying, setVideoPlaying} = useContext(UserContext)
   const[loading, setLoading] = useState(true)
-  const [videoPlaying, setVideoPlaying] = useState(true);
 
   useEffect(() => {
          fetch("http://localhost:4000/data", {

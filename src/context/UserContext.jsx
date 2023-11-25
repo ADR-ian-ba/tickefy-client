@@ -9,10 +9,11 @@ const UserContextProvider = (props) => {
      const[username, setUsername] = useState("")
      const[recomendation, setRecomendation] = useState([])
      const[openNav, setOpenNav] = useState(false)
+     const [videoPlaying, setVideoPlaying] = useState(true);
 
 
     return(
-        <UserContext.Provider value={{username, setUsername, openNav, setOpenNav, recomendation, setRecomendation, isLogin, setIsLogin}}>
+        <UserContext.Provider value={{videoPlaying, setVideoPlaying, username, setUsername, openNav, setOpenNav, recomendation, setRecomendation, isLogin, setIsLogin}}>
             {props.children}
         </UserContext.Provider>
     )
