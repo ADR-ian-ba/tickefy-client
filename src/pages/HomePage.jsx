@@ -33,10 +33,6 @@ const HomePage = () => {
   
          });
      }, []);
- 
-     useEffect(()=>{
-
-     },[recomendation])
 
      const handleVideoEnd = () => {
       setVideoPlaying(false);
@@ -45,7 +41,7 @@ const HomePage = () => {
   useEffect(() => {
     // Change body background color when the video is playing
     if (videoPlaying) {
-        document.body.style.backgroundColor = '#0A0B0C';
+        document.body.style.backgroundColor = '#121212';
     } else {
         document.body.style.backgroundColor = '#171717';
     }
@@ -65,14 +61,13 @@ const HomePage = () => {
         width: '100%', }}>
           <video 
               onEnded={handleVideoEnd} 
-              autoPlay 
-              muted 
               style={{ maxWidth: '100%', 
               maxHeight: '50vh', 
               zIndex: 1, 
               objectFit: 'cover' }} 
+              autoPlay 
           >
-              <source src="/assets/tickefy-loading.mp4" type="video/mp4" /> {/* Adjusted path */}
+              <source src="/assets/introtickefycompressed.mp4" type="video/mp4" />
           </video>
         </div>
         
