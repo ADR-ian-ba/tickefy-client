@@ -13,7 +13,7 @@ const Navigation = () => {
   return (
     <>
     <Link to="/">
-      <img className="logo-mobile" src="../public/assets/tickefy.png" alt="tickefy" />
+      <img className="logo-mobile" src="/assets/tickefy.png" alt="tickefy" />
     </Link>
       
       <svg style={{position:"fixed"}} onClick={()=> setOpenNav(!openNav)} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={`exit ${openNav ? "" : "display-none"}`}>
@@ -28,7 +28,7 @@ const Navigation = () => {
         <ul>
           <li  className="logo-li">
             <Link to="/">
-              <img className="logo" src="../public/assets/tickefy.png" alt="tickefy" />
+              <img className="logo" src="/assets/tickefy.png" alt="tickefy" />
             </Link>
           </li>
             <NavLink style={{color: "#ffffff", textDecoration:"none"}} to="/" className={({isActive}) => (isActive ? "active-style" : "none")} >

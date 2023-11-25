@@ -52,27 +52,27 @@ const HomePage = () => {
     };
 }, [videoPlaying]);
 
-    if(loading || videoPlaying){
-    return (
-        <div style={{ display: 'flex', 
-        justifyContent: 'center', 
-        alignItems: 'center', 
-        height: '100vh', 
-        width: '100%', }}>
-          <video 
-              onEnded={handleVideoEnd} 
-              style={{ maxWidth: '100%', 
-              maxHeight: '50vh', 
-              zIndex: 1, 
-              objectFit: 'cover' }} 
-              autoPlay 
-          >
-              <source src="/assets/introtickefycompressed.mp4" type="video/mp4" />
-          </video>
-        </div>
+    // if(loading || videoPlaying){
+    // return (
+    //     <div style={{ display: 'flex', 
+    //     justifyContent: 'center', 
+    //     alignItems: 'center', 
+    //     height: '100vh', 
+    //     width: '100%', }}>
+    //       <video 
+    //           onEnded={handleVideoEnd} 
+    //           style={{ maxWidth: '100%', 
+    //           maxHeight: '50vh', 
+    //           zIndex: 1, 
+    //           objectFit: 'cover' }} 
+    //           autoPlay 
+    //       >
+    //           <source src="/assets/tickefy-loading.mp4" type="video/mp4" />
+    //       </video>
+    //     </div>
         
-    )
-    }
+    // )
+    // }
   
   return (
     <section className="home">
