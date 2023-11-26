@@ -43,7 +43,7 @@ const HomePage = () => {
     if (videoPlaying || loading) {
         document.body.style.backgroundColor = '#0A0B0C';
     } else {
-        document.body.style.backgroundColor = '#171717';
+        document.body.style.backgroundColor = '#0A0B0C';
     }
 
     // Cleanup function to reset the background color
