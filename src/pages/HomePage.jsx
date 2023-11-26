@@ -40,7 +40,7 @@ const HomePage = () => {
 
   useEffect(() => {
     // Change body background color when the video is playing
-    if (videoPlaying) {
+    if (videoPlaying || loading) {
         document.body.style.backgroundColor = '#0A0B0C';
     } else {
         document.body.style.backgroundColor = '#171717';
@@ -50,7 +50,7 @@ const HomePage = () => {
     return () => {
         document.body.style.backgroundColor = '#171717';
     };
-}, [videoPlaying]);
+}, [videoPlaying, loading]);
 
     if(loading || videoPlaying){
     return (
