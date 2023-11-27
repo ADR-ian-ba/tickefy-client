@@ -67,8 +67,9 @@ const HomePage = () => {
               objectFit: 'cover' }} 
               autoPlay 
               muted
+              playsInline
           >
-              <source src="/assets/tickefy-loading.mp4" type="video/mp4" />
+              <source src="/assets/tickefy-loading.mp4" type="video/mp4"/>
           </video>
         </div>
         
@@ -81,7 +82,7 @@ const HomePage = () => {
 
       <div className="video">
         
-        <video className="hero-video" autoPlay muted loop>
+        <video className="hero-video" autoPlay muted loop playsInline>
           <source src="/assets/hero.mp4" type="video/mp4"/>
         </video>
       </div>
