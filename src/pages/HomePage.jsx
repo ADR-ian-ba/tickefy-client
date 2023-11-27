@@ -10,11 +10,12 @@ const HomePage = () => {
   const[loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const videoPlayed = localStorage.getItem('videoPlayed');
+    localStorage.setItem('videoPlayed', 'false');
+      const videoPlayed = localStorage.getItem('videoPlayed');
 
-    if (videoPlayed) {
-      setLoading(false);
-    } 
+      if (videoPlayed) {
+        setLoading(false);
+      } 
 
          fetch("https://tickefy-api.onrender.com/data", {
              method: "GET",
