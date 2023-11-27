@@ -6,8 +6,7 @@ import { Link } from "react-router-dom"
 
 const HomePage = () => {
 
-  const {recomendation, setRecomendation, isLogin, videoPlaying, setVideoPlaying, setComedy, setEvent, setSport, comedy, event, sport} = useContext(UserContext)
-  const[loading, setLoading] = useState(true)
+  const {loading, setLoading, recomendation, setRecomendation, isLogin, videoPlaying, setVideoPlaying, setComedy, setEvent, setSport, comedy, event, sport} = useContext(UserContext)
 
   useEffect(() => {
 

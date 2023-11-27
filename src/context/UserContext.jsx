@@ -13,10 +13,11 @@ const UserContextProvider = (props) => {
      const[event, setEvent] = useState([])
      const[openNav, setOpenNav] = useState(false)
      const [videoPlaying, setVideoPlaying] = useState(true);
+     const[loading, setLoading] = useState(true)
 
 
     return(
-        <UserContext.Provider value={{comedy, setComedy, sport, setSport, event, setEvent, videoPlaying, setVideoPlaying, username, setUsername, openNav, setOpenNav, recomendation, setRecomendation, isLogin, setIsLogin}}>
+        <UserContext.Provider value={{loading, setLoading, comedy, setComedy, sport, setSport, event, setEvent, videoPlaying, setVideoPlaying, username, setUsername, openNav, setOpenNav, recomendation, setRecomendation, isLogin, setIsLogin}}>
             {props.children}
         </UserContext.Provider>
     )
