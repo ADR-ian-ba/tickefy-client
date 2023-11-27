@@ -14,7 +14,16 @@ const HomePage = () => {
 
       if (videoPlayed === "true") {
         setLoading(false);
-      } 
+      } else {
+        // Assuming your video duration is, for example, 30 seconds
+        const videoDuration = 3000; // 30 seconds in milliseconds
+        const timer = setTimeout(() => {
+            setVideoPlaying(false);
+            sessionStorage.setItem('videoPlayed', 'true');
+        }, videoDuration);
+
+        return () => clearTimeout(timer);
+      }
 
          fetch("https://tickefy-api.onrender.com/data", {
              method: "GET",
