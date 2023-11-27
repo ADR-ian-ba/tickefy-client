@@ -9,6 +9,7 @@ const HomePage = () => {
   const {loading, setLoading, recomendation, setRecomendation, isLogin, videoPlaying, setVideoPlaying, setComedy, setEvent, setSport, comedy, event, sport} = useContext(UserContext)
 
   useEffect(() => {
+    const videoPlayed = sessionStorage.getItem('videoPlayed') === 'true';
 
       if (recomendation.length > 0) {
         setLoading(false);
@@ -69,16 +70,14 @@ const HomePage = () => {
 
   
          });
+     // eslint-disable-next-line react-hooks/exhaustive-deps
      }, []);
 
      const handleVideoEnd = () => {
-      setTimeout(()=>{
-        setVideoPlaying(false);
-        sessionStorage.setItem('videoPlayed', 'true');
-        console.log("video ended")
-      }, 3500)
-
-  };
+      sessionStorage.setItem('videoPlayed', 'true');
+      setVideoPlaying(false);
+      setLoading(false);
+    };
 
   useEffect(() => {
     // Change body background color when the video is playing or loading
