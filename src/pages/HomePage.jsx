@@ -10,21 +10,10 @@ const HomePage = () => {
   const[loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const videoPlayed = sessionStorage.getItem('videoPlayed');
 
-      if (videoPlayed === "true") {
+      if (recomendation.length > 0) {
         setLoading(false);
-      } else {
-        // Assuming your video duration is, for example, 30 seconds
-        const videoDuration = 3000; // 30 seconds in milliseconds
-        const timer = setTimeout(() => {
-            setVideoPlaying(false);
-            sessionStorage.setItem('videoPlayed', 'true');
-        }, videoDuration);
-
-        return () => clearTimeout(timer);
-      }
-
+      } 
          fetch("https://tickefy-api.onrender.com/data", {
              method: "GET",
              headers: {
@@ -86,7 +75,7 @@ const HomePage = () => {
 
   useEffect(() => {
     // Change body background color when the video is playing or loading
-    if (loading && videoPlaying) {
+    if (loading) {
         document.body.style.backgroundColor = '#0A0B0C'; // Dark color when loading or video playing
     } else {
         document.body.style.backgroundColor = '#171717'; // Standard color otherwise
@@ -96,9 +85,9 @@ const HomePage = () => {
     return () => {
         document.body.style.backgroundColor = '#171717'; // Reset to standard color on component unmount
     };
-}, [videoPlaying, loading]);
+}, [loading]);
 
-    if(loading && videoPlaying){
+    if(loading){
     return (
         <div style={{ display: 'flex', 
         justifyContent: 'center', 
