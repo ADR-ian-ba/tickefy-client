@@ -81,7 +81,7 @@ const HomePage = () => {
     };
 }, [videoPlaying, loading]);
 
-    if(loading && videoPlaying){
+    if(loading || videoPlaying){
     return (
         <div style={{ display: 'flex', 
         justifyContent: 'center', 
