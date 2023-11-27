@@ -120,7 +120,8 @@ const HomePage = () => {
         <h1 >Discover Your Passion</h1>
         <h1 >With <span>Tickefy</span></h1>
         {isLogin ?
-          <button className="register-button">About Us</button>
+          // <button className="register-button">About Us</button>
+          <></>
         :
         <>
           <Link style={{textDecoration:"none"}} to="/login">
