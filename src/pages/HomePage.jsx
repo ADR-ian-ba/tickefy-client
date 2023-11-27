@@ -10,9 +10,11 @@ const HomePage = () => {
 
   useEffect(() => {
 
-      if (recomendation.length) {
+      if (recomendation) {
         setLoading(false);
-      } 
+      } else{
+        setLoading(true)
+      }
          fetch("https://tickefy-api.onrender.com/data", {
              method: "GET",
              headers: {
