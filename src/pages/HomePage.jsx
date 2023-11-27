@@ -9,7 +9,18 @@ const HomePage = () => {
   const {loading, setLoading, recomendation, setRecomendation, isLogin, videoPlaying, setVideoPlaying, setComedy, setEvent, setSport, comedy, event, sport} = useContext(UserContext)
 
   useEffect(() => {
-    const videoPlayed = sessionStorage.getItem('videoPlayed') === 'true';
+    const currentDate = new Date().toDateString();
+    const lastPlayedDate = localStorage.getItem('lastVideoPlayedDate');
+
+    if (lastPlayedDate === currentDate) {
+      setLoading(false);
+    } else {
+      if (recomendation.length > 0) {
+        setLoading(false);
+      } else {
+        setLoading(true);
+      }
+    }
 
       if (recomendation.length > 0) {
         setLoading(false);
@@ -74,10 +85,12 @@ const HomePage = () => {
      }, []);
 
      const handleVideoEnd = () => {
-      sessionStorage.setItem('videoPlayed', 'true');
+      const currentDate = new Date().toDateString();
+      localStorage.setItem('lastVideoPlayedDate', currentDate);
       setVideoPlaying(false);
       setLoading(false);
     };
+  
 
   useEffect(() => {
     // Change body background color when the video is playing or loading
