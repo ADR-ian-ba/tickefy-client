@@ -16,7 +16,7 @@ const UserContextProvider = (props) => {
 
 
     return(
-        <UserContext.Provider value={{videoPlaying, setVideoPlaying, username, setUsername, openNav, setOpenNav, recomendation, setRecomendation, isLogin, setIsLogin}}>
+        <UserContext.Provider value={{comedy, setComedy, sport, setSport, event, setEvent, videoPlaying, setVideoPlaying, username, setUsername, openNav, setOpenNav, recomendation, setRecomendation, isLogin, setIsLogin}}>
             {props.children}
         </UserContext.Provider>
     )

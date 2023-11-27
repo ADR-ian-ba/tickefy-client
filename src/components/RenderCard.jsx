@@ -30,7 +30,7 @@ const RenderCard = ({label, poster}) => {
       
   return (
     <div className="render-poster">
-        <h1>{label}</h1>
+        <h1 style={{fontSize:"2.5rem"}}>{label}</h1>
 
         <div className="slider-wrapper">
 
