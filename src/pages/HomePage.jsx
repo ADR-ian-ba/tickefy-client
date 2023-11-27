@@ -69,7 +69,7 @@ const HomePage = () => {
 
   useEffect(() => {
     // Change body background color when the video is playing or loading
-    if (loading || videoPlaying) {
+    if (loading && videoPlaying) {
         document.body.style.backgroundColor = '#0A0B0C'; // Dark color when loading or video playing
     } else {
         document.body.style.backgroundColor = '#171717'; // Standard color otherwise
@@ -86,7 +86,7 @@ const HomePage = () => {
         <div style={{ display: 'flex', 
         justifyContent: 'center', 
         alignItems: 'center', 
-        height: '100vh', 
+        height: '90vh', 
         width: '100%', }}>
           <video 
               onEnded={handleVideoEnd} 
