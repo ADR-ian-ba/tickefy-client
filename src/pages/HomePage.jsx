@@ -72,6 +72,7 @@ const HomePage = () => {
      const handleVideoEnd = () => {
       setVideoPlaying(false);
       localStorage.setItem('videoPlayed', 'true');
+      console.log("video ended")
   };
 
   useEffect(() => {
