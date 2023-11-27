@@ -63,16 +63,19 @@ const HomePage = () => {
          .finally(()=>{
           setTimeout(()=>{
             setLoading(false)
-          }, 3000)
+          }, 3500)
 
   
          });
      }, []);
 
      const handleVideoEnd = () => {
-      setVideoPlaying(false);
-      sessionStorage.setItem('videoPlayed', 'true');
-      console.log("video ended")
+      setTimeout(()=>{
+        setVideoPlaying(false);
+        sessionStorage.setItem('videoPlayed', 'true');
+        console.log("video ended")
+      }, 3500)
+
   };
 
   useEffect(() => {
