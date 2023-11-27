@@ -10,7 +10,7 @@ const HomePage = () => {
   const[loading, setLoading] = useState(true)
 
   useEffect(() => {
-      const videoPlayed = localStorage.getItem('videoPlayed');
+    const videoPlayed = sessionStorage.getItem('videoPlayed');
 
       if (videoPlayed === "true") {
         setLoading(false);
@@ -71,7 +71,7 @@ const HomePage = () => {
 
      const handleVideoEnd = () => {
       setVideoPlaying(false);
-      localStorage.setItem('videoPlayed', 'true');
+      sessionStorage.setItem('videoPlayed', 'true');
       console.log("video ended")
   };
 
