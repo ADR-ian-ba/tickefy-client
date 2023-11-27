@@ -8,6 +8,9 @@ const UserContextProvider = (props) => {
      const [isLogin, setIsLogin] = useState(false)
      const[username, setUsername] = useState("")
      const[recomendation, setRecomendation] = useState([])
+     const[comedy, setComedy] = useState([])
+     const[sport, setSport] = useState([])
+     const[event, setEvent] = useState([])
      const[openNav, setOpenNav] = useState(false)
      const [videoPlaying, setVideoPlaying] = useState(true);
 

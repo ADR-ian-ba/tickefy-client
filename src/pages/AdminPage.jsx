@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import toast, {Toaster} from 'react-hot-toast';
 
 const AdminPage = () => {
     const [posterImage, setPosterImage] = useState(null);
@@ -7,7 +8,7 @@ const AdminPage = () => {
     const [description, setDescription] = useState('');
     const [artist, setArtist] = useState('');
     const [showNumber, setShowNumber] = useState(1);
-    const[type, setType] = useState("")
+    const[type, setType] = useState("concert")
     const [shows, setShows] = useState([{ 
       catImage: null, 
       catNumber: 0, 
@@ -118,35 +119,36 @@ const AdminPage = () => {
 
         console.log(formDataObject)
 
-        try{
-            fetch('https://tickefy-api.onrender.com/uploadconcert', {
-            method: 'POST', 
-            headers: {
-                'Content-Type': 'application/json', 
-            },
-            body: JSON.stringify(formDataObject),
-            })
-            .then((response) => {
-                if (response.ok) {
-                return response.json(); 
-                } else {
-                throw new Error('Failed to send data to the server');
-                }
-            })
-            .then((data) => {
-                console.log('Server Response:', data); 
-            })
-            .catch((error) => {
-                console.error('An error occurred:', error);
-            });
-            }catch(error){
-                null
-            }
-      };
+        try {
+          toast.loading('Submitting...'); // Show loading toast
+    
+          const response = await fetch('https://tickefy-api.onrender.com/uploadconcert', {
+             method: 'POST', 
+             headers: {
+                 'Content-Type': 'application/json', 
+             },
+             body: JSON.stringify(formDataObject),
+          });
+    
+          if (response.ok) {
+             const data = await response.json();
+             toast.success('Successfully submitted!'); // Show success toast
+             console.log('Server Response:', data);
+          } else {
+             throw new Error('Failed to send data to the server');
+          }
+       } catch (error) {
+          toast.error('An error occurred: ' + error.message); // Show error toast
+          console.error('An error occurred:', error);
+       } finally {
+          toast.dismiss(); // Dismiss the loading toast
+       }
+    };
   
 
   return (
     <section>
+      <Toaster/>
       <form onSubmit={handleSubmit}>
         <label htmlFor="posterImage">Poster Image:</label><br/>
         <input type="file" id="posterImage" name="posterImage" accept="image/*" onChange={handleFileChange(setPosterImage)}/><br/>
@@ -164,10 +166,10 @@ const AdminPage = () => {
 
         <label htmlFor="concert-type">Select type:</label>
       <select id="concert-type" value={type}  onChange={(ev)=> setType(ev.target.value)} >
-        <option value="concert">concert</option>
-        <option value="comedy">comedy</option>
-        <option value="sport">sport</option>
-        <option value="Event">Event</option>
+        <option value="concert">Concert</option>
+        <option value="comedy">Comedy</option>
+        <option value="sport">Sport</option>
+        <option value="event">Event</option>
       </select>
       <br/>
 
