@@ -10,10 +10,9 @@ const HomePage = () => {
   const[loading, setLoading] = useState(true)
 
   useEffect(() => {
-    localStorage.setItem('videoPlayed', 'false');
       const videoPlayed = localStorage.getItem('videoPlayed');
 
-      if (videoPlayed) {
+      if (videoPlayed === "true") {
         setLoading(false);
       } 
 
