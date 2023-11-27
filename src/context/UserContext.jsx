@@ -13,7 +13,7 @@ const UserContextProvider = (props) => {
      const[event, setEvent] = useState([])
      const[openNav, setOpenNav] = useState(false)
      const [videoPlaying, setVideoPlaying] = useState(true);
-     const[loading, setLoading] = useState(true)
+     const[loading, setLoading] = useState(false)
 
 
     return(

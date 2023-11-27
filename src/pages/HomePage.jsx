@@ -61,7 +61,10 @@ const HomePage = () => {
              console.error('Error:', error);
          })
          .finally(()=>{
-          setLoading(false)
+          setTimeout(()=>{
+            setLoading(false)
+          }, 3000)
+
   
          });
      }, []);
