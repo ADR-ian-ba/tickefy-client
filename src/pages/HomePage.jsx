@@ -10,7 +10,7 @@ const HomePage = () => {
 
   useEffect(() => {
 
-      if (recomendation) {
+      if (recomendation.length > 0) {
         setLoading(false);
       } else{
         setLoading(true)
